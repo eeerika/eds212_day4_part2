@@ -1,1 +1,6 @@
-# eds212_day4_part2
+# EDS 212 - Day 4
+
+### Exploring data - introduction
+
+- Some useful plots
+- Summary statistics
