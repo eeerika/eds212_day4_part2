@@ -35,3 +35,36 @@ head(penguins)
 tail(penguins)
 ```
 
+```{r}
+skim(penguins)
+```
+
+```{r}
+#| include: false
+GGally::ggpairs(penguins)
+```
+
+## Jitterplot
+
+Flipper length by species
+
+```{r}
+#| fig.cap = "My awesome figure caption."
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_jitter(width = 0.2,
+              alpha = 0.5,
+              aes(color = species)) +
+  geom_boxplot(fill = NA) +
+  theme_light() +
+  scale_color_manual(values = c("darkorchid4", "cyan4", "goldenrod")) +
+  labs(x = "Penguin species",
+       y = "Flipper length (mm)",
+       title = "Palmer Archipelago Penguin Flippers")
+```
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm)) +
+  geom_histogram(aes(fill = species), color = "magenta") + 
+  facet_wrap(~species, ncol = 1)
+```
+
